@@ -36,7 +36,7 @@ float max(const float* numberset, int setlength)
 }
 float avg(const float* numberset, int setlength)
 {
-    float ret = numberset[0];
+    float ret = 0;
     for (int i = 0; i < setlength; i++)
     {
         ret = ret + numberset[i];
