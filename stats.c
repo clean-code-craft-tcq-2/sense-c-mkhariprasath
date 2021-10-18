@@ -53,5 +53,10 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     return s;
 }
 
+void emailAlerter()
+{}
+void ledAlerter()
+{}
+
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
