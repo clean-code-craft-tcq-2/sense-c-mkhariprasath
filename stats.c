@@ -14,7 +14,7 @@ float min(const float* numberset, int setlength)
     float ret = numberset[0];
     for (int i = 1; i < setlength; i++)
     {
-        if (ret < numberset[i])
+        if (numberset[i] < ret )
         {
             ret = numberset[i];
         }
@@ -27,7 +27,7 @@ float max(const float* numberset, int setlength)
     float ret = numberset[0];
     for (int i = 1; i < setlength; i++)
     {
-        if (ret > numberset[i])
+        if (numberset[i] > ret)
         {
             ret = numberset[i];
         }
