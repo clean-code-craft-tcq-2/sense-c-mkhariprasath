@@ -2,11 +2,10 @@
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
-    localMax = computedStats.max;
-    if(localMax > maxThreshold)
+    if(computedStats.max > maxThreshold)
     {
-        alerters[0]();
-        alerters[1]();
+        (*alerters[0])();
+        (*alerters[1])();
     }
 }
 
@@ -48,9 +47,9 @@ float avg(const float* numberset, int setlength)
 struct Stats compute_statistics(const float* numberset, int setlength) {
         
     struct Stats s;
-    s.average = avg(const float* numberset, int setlength);
-    s.min = min(const float* numberset, int setlength);
-    s.max = max(const float* numberset, int setlength);
+    s.average = avg(numberset, setlength);
+    s.min = min(numberset, setlength);
+    s.max = max(numberset, setlength);
     return s;
 }
 
