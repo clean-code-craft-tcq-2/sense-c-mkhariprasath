@@ -1,3 +1,4 @@
+#include "alerter.h"
 typedef struct Stats 
 {
   float max;
