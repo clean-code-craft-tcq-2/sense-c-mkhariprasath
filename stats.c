@@ -1,10 +1,4 @@
-
-float min(const float* numberset, int setlength);
-float max(const float* numberset, int setlength);
-float avg(const float* numberset, int setlength);
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
-void emailAlerter();
-void ledAlerter();
+#include "stats.h"
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
