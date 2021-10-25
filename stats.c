@@ -47,20 +47,52 @@ float avg(const float* numberset, int setlength)
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
         
-    struct Stats s;
+    // struct Stats s;
+    // if (numberset == 0 || setlength == 0) //check for valid or non-empty array
+    // {
+    //     s.average = NAN;
+    //     s.min = NAN;
+    //     s.max = NAN;   
+    // }
+    // else
+    // {
+    //     s.average = avg(numberset, setlength);
+    //     s.min = min(numberset, setlength);
+    //     s.max = max(numberset, setlength);
+    // }
+    // return s;
+
+    //optimisation
+
+    struct Stats ret;
     if (numberset == 0 || setlength == 0) //check for valid or non-empty array
     {
-        s.average = NAN;
-        s.min = NAN;
-        s.max = NAN;   
+        ret.average = NAN;
+        ret.min = NAN;
+        ret.max = NAN;
+        return ret;   
     }
-    else
+
+    ret.max     = numberset[0];
+    ret.min     = numberset[0];
+    ret.average = numberset[0];
+    
+    for (int i = 1; i < setlength; i++)
     {
-        s.average = avg(numberset, setlength);
-        s.min = min(numberset, setlength);
-        s.max = max(numberset, setlength);
+        if (numberset[i] < ret.min ) // check min than min
+        {
+            ret.min = numberset[i];
+        }
+        if (numberset[i] > ret.max ) // check max than max
+        {
+            ret.max = numberset[i];
+        }
+        ret.average = ret.average + numberset[i]; // accumulate
+        if (i == (setlength-1))
+            ret.average = ret.average/setlength; // calculate average
+
     }
-    return s;
+    return ret;
 }
 
 int emailAlertCallCount = 0;
