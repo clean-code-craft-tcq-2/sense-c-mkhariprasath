@@ -47,21 +47,6 @@ float avg(const float* numberset, int setlength)
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
         
-    // struct Stats s;
-    // if (numberset == 0 || setlength == 0) //check for valid or non-empty array
-    // {
-    //     s.average = NAN;
-    //     s.min = NAN;
-    //     s.max = NAN;   
-    // }
-    // else
-    // {
-    //     s.average = avg(numberset, setlength);
-    //     s.min = min(numberset, setlength);
-    //     s.max = max(numberset, setlength);
-    // }
-    // return s;
-
     //optimisation
 
     struct Stats ret;
